@@ -57,6 +57,7 @@ namespace Microsoft.eShopWeb.Web.Services
 				return itemModel;
 			})
 											.ToList();
+			viewModel.SubTotal = viewModel.CalculateSubTotal();
 			return viewModel;
 		}
 

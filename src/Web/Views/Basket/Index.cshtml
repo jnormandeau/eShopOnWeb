@@ -49,12 +49,32 @@
 					<div class="container">
 						<article class="esh-basket-titles esh-basket-titles--clean row">
 							<section class="esh-basket-title col-xs-10"></section>
-							<section class="esh-basket-title col-xs-2">Total</section>
+							<section class="esh-basket-title col-xs-2">Sub Total</section>
 						</article>
 
 						<article class="esh-basket-items row">
 							<section class="esh-basket-item col-xs-10"></section>
-							<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.Total()</section>
+							<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.SubTotal</section>
+						</article>
+
+						<article class="esh-basket-titles esh-basket-titles--clean row">
+							<section class="esh-basket-title col-xs-10"></section>
+							<section class="esh-basket-title col-xs-2">Tax (15%)</section>
+						</article>
+
+						<article class="esh-basket-items row">
+							<section class="esh-basket-item col-xs-10"></section>
+							<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Decimal.Round(Model.SubTotal * 0.15M, 2, MidpointRounding.AwayFromZero)</section>
+						</article>
+
+						<article class="esh-basket-titles esh-basket-titles--clean row">
+							<section class="esh-basket-title col-xs-10"></section>
+							<section class="esh-basket-title col-xs-2">Grand Total</section>
+						</article>
+
+						<article class="esh-basket-items row">
+							<section class="esh-basket-item col-xs-10"></section>
+							<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Decimal.Round(Model.SubTotal * 1.15M, 2, MidpointRounding.AwayFromZero)</section>
 						</article>
 
 						<article class="esh-basket-items row">
