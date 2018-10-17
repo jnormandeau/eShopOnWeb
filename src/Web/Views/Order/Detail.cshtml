@@ -20,7 +20,7 @@
 			<article class="esh-orders_detail-items row">
 				<section class="esh-orders_detail-item col-xs-3">@Model.OrderNumber</section>
 				<section class="esh-orders_detail-item col-xs-3">@Model.OrderDate</section>
-				<section class="esh-orders_detail-item col-xs-3">$@Model.Total</section>
+				<section class="esh-orders_detail-item col-xs-3">$ @Decimal.Round(Model.SubTotal * 1.15M, 2, MidpointRounding.AwayFromZero)</section>
 				<section class="esh-orders_detail-title col-xs-3">@Model.Status</section>
 			</article>
 		</section>
@@ -74,15 +74,37 @@
 		</section>
 
 		<section class="esh-orders_detail-section esh-orders_detail-section--right">
+
 			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
 				<section class="esh-orders_detail-title col-xs-9"></section>
-				<section class="esh-orders_detail-title col-xs-2">TOTAL</section>
+				<section class="esh-orders_detail-title col-xs-2">SUBTOTAL</section>
 			</article>
 
 			<article class="esh-orders_detail-items row">
 				<section class="esh-orders_detail-item col-xs-9"></section>
-				<section class="esh-orders_detail-item esh-orders_detail-item--mark col-xs-2">$ @Model.Total</section>
+				<section class="esh-orders_detail-item esh-orders_detail-item--mark col-xs-2">$ @Model.SubTotal</section>
 			</article>
+
+			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
+				<section class="esh-orders_detail-title col-xs-9"></section>
+				<section class="esh-orders_detail-title col-xs-2">Tax (15%)</section>
+			</article>
+
+			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
+				<section class="esh-orders_detail-title col-xs-9"></section>
+				<section class="esh-orders_detail-title col-xs-2">$ @Decimal.Round(Model.SubTotal * 0.15M, 2, MidpointRounding.AwayFromZero)</section>
+			</article>
+
+			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
+				<section class="esh-orders_detail-title col-xs-9"></section>
+				<section class="esh-orders_detail-title col-xs-2">GRAND TOTAL</section>
+			</article>
+
+			<article class="esh-orders_detail-items row">
+				<section class="esh-orders_detail-item col-xs-9"></section>
+				<section class="esh-orders_detail-item esh-orders_detail-item--mark col-xs-2">$ @Decimal.Round(Model.SubTotal * 1.15M, 2, MidpointRounding.AwayFromZero)</section>
+			</article>
+
 		</section>
 	</div>
 </div>

@@ -90,6 +90,7 @@ namespace Microsoft.eShopWeb.Web.Controllers
 			{
 				return await _basketViewModelService.GetOrCreateBasketForUser(User.Identity.Name);
 			}
+
 			string anonymousId = GetOrSetBasketCookie();
 			return await _basketViewModelService.GetOrCreateBasketForUser(anonymousId);
 		}
