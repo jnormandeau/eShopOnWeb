@@ -43,36 +43,58 @@
 						</div>
 					</article>
 					@*<div class="esh-catalog-item col-md-4">
-								@item.ProductId
-						</div>*@
+					@item.ProductId
+			</div>*@
 
-					<div class="container">
-						<article class="esh-basket-titles esh-basket-titles--clean row">
-							<section class="esh-basket-title col-xs-10"></section>
-							<section class="esh-basket-title col-xs-2">Total</section>
-						</article>
 
-						<article class="esh-basket-items row">
-							<section class="esh-basket-item col-xs-10"></section>
-							<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.Total()</section>
-						</article>
-
-						<article class="esh-basket-items row">
-							<section class="esh-basket-item col-xs-7"></section>
-							<section class="esh-basket-item col-xs-2">
-								@*<button class="btn esh-basket-checkout" name="name" value="" type="submit">[ Update ]</button>*@
-							</section>
-						</article>
-					</div>
 				}
+				<div class="container">
+
+					<article class="esh-basket-titles esh-basket-titles--clean row">
+						<section class="esh-basket-title col-xs-10"></section>
+						<section class="esh-basket-title col-xs-2">Sub Total</section>
+					</article>
+
+					<article class="esh-basket-items row">
+						<section class="esh-basket-item col-xs-10"></section>
+						<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.SubTotal()</section>
+					</article>
+
+					<article class="esh-basket-titles esh-basket-titles--clean row">
+						<section class="esh-basket-title col-xs-10"></section>
+						<section class="esh-basket-title col-xs-2">Tax Amount</section>
+					</article>
+
+					<article class="esh-basket-items row">
+						<section class="esh-basket-item col-xs-10"></section>
+						<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.TaxAmount()</section>
+					</article>
+
+					<article class="esh-basket-titles esh-basket-titles--clean row">
+						<section class="esh-basket-title col-xs-10"></section>
+						<section class="esh-basket-title col-xs-2">Total</section>
+					</article>
+
+					<article class="esh-basket-items row">
+						<section class="esh-basket-item col-xs-10"></section>
+						<section class="esh-basket-item esh-basket-item--mark col-xs-2">$ @Model.Total()</section>
+					</article>
+
+					<article class="esh-basket-items row">
+						<section class="esh-basket-item col-xs-7"></section>
+						<section class="esh-basket-item col-xs-2">
+							@*<button class="btn esh-basket-checkout" name="name" value="" type="submit">[ Update ]</button>*@
+						</section>
+					</article>
+				</div>
 				<section class="esh-basket-item col-xs-push-8 col-xs-4">
 					<button class="btn esh-basket-checkout" name="updatebutton" value="" type="submit"
-									asp-action="Index">
+							asp-action="Index">
 						[ Update ]
 					</button>
 					<input type="submit" asp-action="Checkout"
-								 class="btn esh-basket-checkout"
-								 value="[ Checkout ]" name="action" />
+						   class="btn esh-basket-checkout"
+						   value="[ Checkout ]" name="action" />
 				</section>
 			</div>
 		</form>
