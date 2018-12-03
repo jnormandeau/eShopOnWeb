@@ -41,6 +41,8 @@ namespace Microsoft.eShopWeb.Web.Controllers
 						OrderNumber = o.Id,
 						ShippingAddress = o.ShipToAddress,
 						Status = "Pending",
+						Subtotal = o.Subtotal(),
+						TaxAmount = o.TaxAmount(),
 						Total = o.Total()
 					});
 			return View(viewModel);
@@ -70,6 +72,8 @@ namespace Microsoft.eShopWeb.Web.Controllers
 				OrderNumber = order.Id,
 				ShippingAddress = order.ShipToAddress,
 				Status = "Pending",
+				Subtotal = order.Subtotal(),
+				TaxAmount = order.TaxAmount(),
 				Total = order.Total()
 			};
 			return View(viewModel);

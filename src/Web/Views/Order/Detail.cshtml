@@ -26,14 +26,14 @@
 		</section>
 
 		@*<section class="esh-orders_detail-section">
-					<article class="esh-orders_detail-titles row">
-							<section class="esh-orders_detail-title col-xs-12">Description</section>
-					</article>
+				<article class="esh-orders_detail-titles row">
+						<section class="esh-orders_detail-title col-xs-12">Description</section>
+				</article>
 
-					<article class="esh-orders_detail-items row">
-							<section class="esh-orders_detail-item col-xs-12">@Model.Description</section>
-					</article>
-			</section>*@
+				<article class="esh-orders_detail-items row">
+						<section class="esh-orders_detail-item col-xs-12">@Model.Description</section>
+				</article>
+		</section>*@
 
 		<section class="esh-orders_detail-section">
 			<article class="esh-orders_detail-titles row">
@@ -71,6 +71,29 @@
 					<section class="esh-orders_detail-item esh-orders_detail-item--middle col-xs-2">$ @Math.Round(item.Units * item.UnitPrice, 2).ToString("N2")</section>
 				</article>
 			}
+		</section>
+
+		<section class="esh-orders_detail-section esh-orders_detail-section--right">
+			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
+				<section class="esh-orders_detail-title col-xs-9"></section>
+				<section class="esh-orders_detail-title col-xs-2">SUBTOTAL</section>
+			</article>
+
+			<article class="esh-orders_detail-items row">
+				<section class="esh-orders_detail-item col-xs-9"></section>
+				<section class="esh-orders_detail-item esh-orders_detail-item--mark col-xs-2">$ @Model.Subtotal</section>
+			</article>
+		</section>
+		<section class="esh-orders_detail-section esh-orders_detail-section--right">
+			<article class="esh-orders_detail-titles esh-basket-titles--clean row">
+				<section class="esh-orders_detail-title col-xs-9"></section>
+				<section class="esh-orders_detail-title col-xs-2">TAX AMOUNT</section>
+			</article>
+
+			<article class="esh-orders_detail-items row">
+				<section class="esh-orders_detail-item col-xs-9"></section>
+				<section class="esh-orders_detail-item esh-orders_detail-item--mark col-xs-2">$ @Model.TaxAmount</section>
+			</article>
 		</section>
 
 		<section class="esh-orders_detail-section esh-orders_detail-section--right">

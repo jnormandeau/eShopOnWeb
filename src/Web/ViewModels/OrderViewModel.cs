@@ -8,6 +8,11 @@ namespace Microsoft.eShopWeb.Web.ViewModels
 	{
 		public int OrderNumber { get; set; }
 		public DateTimeOffset OrderDate { get; set; }
+
+		public decimal Subtotal { get; set; }
+
+		public decimal TaxAmount { get; set; }
+
 		public decimal Total { get; set; }
 		public string Status { get; set; }
 
